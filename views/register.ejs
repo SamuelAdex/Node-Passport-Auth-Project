@@ -1,0 +1,36 @@
+<%- include("./partials/header.ejs") %> 
+<div class="container">
+    <div class="row">
+        <div class="col m3"></div>
+        <div class="col m6">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title"><h4><b>Register</b></h4></div>
+                    <%- include("./partials/messages.ejs") %>
+                    <form action="/user/register" method="POST">
+                        <label for="name">Name</label>
+                        <div class="input-field">
+                            <input type="text" placeholder="Name" name="name" value="<%= typeof name != 'undefined'? name: '' %> " required>
+                        </div>
+                        <label for="email">Email</label>
+                        <div class="input-field">
+                            <input type="email" placeholder="Email" name="email" value="<%= typeof email != 'undefined'? email: '' %> " required>
+                        </div>
+                        <label for="password1">Password</label>
+                        <div class="input-field">
+                            <input type="password" placeholder="Password" name="password1" required>
+                        </div>
+                        <label for="password2">Confirm Password</label>
+                        <div class="input-field">
+                             <input type="password" placeholder="confirm password" name="password2">
+                        </div>
+                        <button class="btn-small waves-effect purple darken-3">Register 🤩</button>
+                        <p>Already Have an account? <a href="/user/login" class="purple-text text-darken-3">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col m3"></div>
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %> 
